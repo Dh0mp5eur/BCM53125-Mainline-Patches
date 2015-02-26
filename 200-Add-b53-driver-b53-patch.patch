@@ -1,0 +1,38 @@
+From ff26e8459dbd65fe8501dbbfa18c14a468e1b903 Mon Sep 17 00:00:00 2001
+From: Dh0mp5eur <dhomps.florian@gmail.com>
+Date: Wed, 18 Feb 2015 11:13:14 +0100
+Subject: [PATCH] Add b53 driver b53 patch
+
+---
+ drivers/net/phy/Kconfig  | 2 ++
+ drivers/net/phy/Makefile | 1 +
+ 2 files changed, 3 insertions(+)
+
+diff --git a/drivers/net/phy/Kconfig b/drivers/net/phy/Kconfig
+index d1c982e..5aa7905 100644
+--- a/drivers/net/phy/Kconfig
++++ b/drivers/net/phy/Kconfig
+@@ -224,6 +224,8 @@ config MDIO_BCM_UNIMAC
+ 
+ endif # PHYLIB
+ 
++source "drivers/net/phy/b53/Kconfig"
++
+ config MICREL_KS8995MA
+ 	tristate "Micrel KS8995MA 5-ports 10/100 managed Ethernet switch"
+ 	depends on SPI
+diff --git a/drivers/net/phy/Makefile b/drivers/net/phy/Makefile
+index cb26095..79cd3b6 100644
+--- a/drivers/net/phy/Makefile
++++ b/drivers/net/phy/Makefile
+@@ -18,6 +18,7 @@ obj-$(CONFIG_BCM87XX_PHY)	+= bcm87xx.o
+ obj-$(CONFIG_ICPLUS_PHY)	+= icplus.o
+ obj-$(CONFIG_REALTEK_PHY)	+= realtek.o
+ obj-$(CONFIG_LSI_ET1011C_PHY)	+= et1011c.o
++obj-$(CONFIG_B53)		+= b53/
+ obj-$(CONFIG_FIXED_PHY)		+= fixed_phy.o
+ obj-$(CONFIG_MDIO_BITBANG)	+= mdio-bitbang.o
+ obj-$(CONFIG_MDIO_GPIO)		+= mdio-gpio.o
+-- 
+2.1.4
+
